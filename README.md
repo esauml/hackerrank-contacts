@@ -1,4 +1,4 @@
-# hackerrank-contacs
+# hackerrank-contacts
 
 Javascript Solution for Hacker Rank Problem with memoization
 
