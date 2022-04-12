@@ -47,24 +47,12 @@ function contactsMemoized(queries) {
 function findValues(list, value, startAt) {
     let slice = list.slice(startAt)
     let searches = slice.filter(e => {
-        let regex = new RegExp(`${value}`, 'gm')
-        let found = regex.test(e)
-        return found
+        if(e.includes(value)) {
+            return true
+        }
     })
 
     return searches.length
-}
-
-function findValues2(list, value, startAt) {
-    let slice = list.slice(startAt)
-    let timesFound = 0
-    slice.forEach(e => {
-        let regex = new RegExp(`${value}`, 'gm')
-        let found = regex.test(e)
-        if(found) timesFound++
-    })
-
-    return timesFound
 }
 
 function doMemoization(dictMemorized, searchValue) {
